@@ -12,7 +12,8 @@ const Home = () => {
   const [categoryEdit, setCategoryEdit] = useState("")
   const [imageEdit, setImageEdit] = useState("")
 
-  // simulando existencia del usuario, proximamente este estado será global
+  const [searchTerm, setSearchTerm] = useState("");
+
   const { user } = useAuth()
 
   const fetchingProducts = async () => {
@@ -21,7 +22,7 @@ const Home = () => {
     setProducts(data)
   }
 
-  // El array vacío (dependencias) espera a que ejecute el return del jsx. Si tiene algo, useEffect se va a ejecutar cada vez que se modifique lo que este dentro de la dependencia.
+  
   useEffect(() => {
     fetchingProducts()
   }, [])
@@ -81,7 +82,13 @@ const Home = () => {
     } catch (error) {
       console.log(error)
     }
-  }
+  };
+
+  //filtrar productos segun busqueda
+
+  const filteredProducts = products.filter((p) =>
+    p.title.toLowerCase().includes(searchTerm.toLowerCase())
+);
 
   return (
     <Layout>
@@ -111,6 +118,15 @@ const Home = () => {
       <section>
         <h2>Nuestros productos</h2>
         <p>Elegí entre nuestras categorías más populares.</p>
+
+        {/*Barra de busqueda*/}
+        <input
+        type="text"
+        className="search-bar"
+        placeholder="Buscar productos"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        />
 
 
         {
