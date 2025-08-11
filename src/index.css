@@ -31,6 +31,14 @@ ul {
   list-style: none;
 }
 
+/*contenedor/es generales para centrar el contenido*/
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .red {
   background-color: red;
 }
