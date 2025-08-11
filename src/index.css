@@ -52,6 +52,20 @@ ul {
   }
 }
 
+/*Tablet: hasta 880px*/
+@media (max-width: 880px) {
+  body {
+    font-size: 15px;
+  }
+  header, footer {
+    padding:15px
+  }
+}
+
+
+
+
+
 .red {
   background-color: red;
 }
