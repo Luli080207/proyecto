@@ -19,3 +19,18 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.product-card img {
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
