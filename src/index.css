@@ -39,6 +39,19 @@ ul {
   margin: 0 auto;
 }
 
+/*Responsive design-Breakpoints*/
+
+/*Mobile: hasta 480px*/
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  header, footer {
+    padding: 10px;
+  }
+}
+
 .red {
   background-color: red;
 }
