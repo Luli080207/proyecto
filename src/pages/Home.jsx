@@ -168,28 +168,33 @@ const Home = () => {
           </section>
         }
 
+        {/* Grid de productos */}
         <div className="products-grid">
-  {products.map((product) => (
-    <div className="product-card" key={product.id}>
-      <img src={product.image} alt={`Imagen de ${product.title}`} />
-      <h3>{product.title}</h3>
-      <p className="price">${product.price}</p>
-      <p>{product.description}</p>
-      <p><strong>{product.category}</strong></p>
-      {user && (
-        <div className="actions">
-          <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
-          <button onClick={() => handleDelete(product.id)}>Borrar</button>
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
+              <div className="product-card" key={product.id}>
+                <img src={product.image} alt={`Imagen de ${product.title}`} />
+                <h3>{product.title}</h3>
+                <p className="price">${product.price}</p>
+                <p>{product.description}</p>
+                <p><strong>{product.category}</strong></p>
+                {user && (
+                  <div className="actions">
+                    <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
+                    <button onClick={() => handleDelete(product.id)}>Borrar</button>
+                  </div>
+                )}
+              </div>
+            ))
+          ) : (
+            <p>No se encontraron productos.</p>
+          )}
         </div>
-      )}
-    </div>
-  ))}
-</div>
-
-
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export { Home }
+export { Home };
+
+       
