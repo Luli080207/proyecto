@@ -24,6 +24,37 @@ const UserProvider = (props) => {
     }
   }
 
+  const register = async (formData) => {
+  try {
+    const res = await fetch("https://fakestoreapi.com/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: formData.email,
+        username: formData.username,
+        password: formData.password
+      })
+    });
+
+    if (!res.ok) {
+      throw new Error("Error al registrar usuario");
+    }
+
+    const data = await res.json();
+    console.log("Usuario creado:", data)
+
+    setUser(true);
+
+    return { success: true, data};
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: error.message };
+  }
+};
+
+  
+  
+
   const logout = () => {
     setUser(null)
   }
