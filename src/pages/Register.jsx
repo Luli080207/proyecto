@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { Layout } from "../components/Layout"
+import { useAuth } from "../context/UserContext";
 
-const Register = ({setUser}) => {
+const Register = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -79,7 +80,7 @@ if (!validate()) return;
               {errors.username && <p style={{ color: "red"}}>{errors.username}</p>}
             </div>
             <div>
-              <label>Correo electrónico:</label>
+              <label>Correo electrónico:</label>|
               <input
               type="email"
               name="email"
