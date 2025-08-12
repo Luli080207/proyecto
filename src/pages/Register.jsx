@@ -39,14 +39,25 @@ const handleSubmit = async (e) => {
 
 if (!validate()) return;
 
-try {
-  const res = await fetch("https://fakestoreapi.com/users", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({
-      email: formData.email,
-      username: formData.username,
-      password: formdata.password,
-  })
+  try {
+      const res = await fetch("https://fakestoreapi.com/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: formData.email,
+          username: formData.username,
+          password: formData.password
+        })
+      });
 
-});
+      if (!res.ok) throw new Error("Error al registrar al usuario");
+      const data = await res.json();
+      console.log("usuario creado:", data);
+
+      setSuccess("Usuario registrado con éxito");
+      setUser(true);
+
+      setFormData({ username: "", email: "", password: ""});
+    } catch (error) {
+      setErrors({ general: "no se pudo registrar al usuario"});
+    };
