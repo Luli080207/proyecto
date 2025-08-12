@@ -6,6 +6,7 @@ import { Register } from "../pages/Register"
 import { NotFound } from "../pages/NotFound"
 import { PrivateRoute } from "../components/PrivateRoute"
 import { useState } from "react"
+import About from "../pages/about";
 
 const RouterApp = () => {
 
@@ -16,6 +17,7 @@ const RouterApp = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Routhe path="/about" element={<About/>} />
         <Route path="/" element={<Home user={user}/>} />
         <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
         <Route path="/login" element={<Login />} />
