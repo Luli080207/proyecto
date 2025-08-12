@@ -29,3 +29,23 @@ Desarrollar una aplicación web de tienda online utilizando la plantilla base pr
 - API [FakeStoreAPI]
 - git y github
 - CSS grid y flexbox.
+
+## Ejecutar manualmente
+
+1. Clonar repositorio
+
+- git clone https://github.com/Luli080207/proyecto.git
+
+2. Entrar en la carpeta del proyecto
+
+- cd proyecto.
+
+3. instalar dependencias
+
+- mp install
+
+4. iniciar servidor de desarrollo.
+
+- npm run dev
+
+5. abrir el en el navegador.
