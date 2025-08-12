@@ -27,6 +27,7 @@ const Header = () => {
               <li><Link to="/registrate">Registrate</Link></li>
             </>
           }
+          <li><Link to="/about">Sobre Nosotros</Link></li>
         </ul>
       </nav>
     </header>
