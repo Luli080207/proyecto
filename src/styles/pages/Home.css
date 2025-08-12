@@ -7,7 +7,7 @@
   margin-top: 20px;
 }
 
-/*card de producto*/
+/*card*/
 
 .product-card {
   background: #fff;
@@ -35,7 +35,7 @@
   color: #666;
 }
 
-/*Responsive desing*/
+/*Responsive*/
 
 @media (max-width: 880px) {
   .products-grid {
