@@ -61,3 +61,35 @@ if (!validate()) return;
     } catch (error) {
       setErrors({ general: "no se pudo registrar al usuario"});
     };
+
+    return (
+      <layout>
+        <h1>Registrate!</h1>
+        <section>
+          <h2>Bienvenido</h2>
+          <form onSubmit={handleSubmit} noValidate>
+            <div>
+              <label>Username:</label>
+              <input
+              type="text"
+              name="username"
+              onChange={handleChange}
+              value={formData.username}
+              />
+              {errors.username && <p style={{ color: "red"}}>{errors.username}</p>}
+            </div>
+            <div>
+              <label>Correo electrónico:</label>
+              <input
+              type="email"
+              name="email"
+              onChange={handleChange}
+              value={formData.email}
+              />
+              {errors.email && <p style={{ color: "red"}}>{errors.email}</p>}
+            </div>
+            
+          </form>
+        </section>
+      </layout>
+    )
