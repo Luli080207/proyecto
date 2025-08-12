@@ -88,8 +88,22 @@ if (!validate()) return;
               />
               {errors.email && <p style={{ color: "red"}}>{errors.email}</p>}
             </div>
-            
-          </form>
+            <div>
+              <label>Contraseña</label>
+              <input
+              type="password"
+              name="password"
+              onChange={handleChange}
+              value={formData.password}
+              />
+              {errors.password && <p style={{ color: "red"}}>{errors.password}</p>}
+            </div>
+            <button>Registrarse</button>
+            </form>
+          {errors.general && <p style={{ color: "red"}}>{errors.general}</p>}
+          {success && <p style={{ color: "green"}}></p>}
         </section>
       </layout>
-    )
+    );
+  
+    export { Register };
